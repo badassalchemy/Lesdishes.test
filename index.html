@@ -259,6 +259,34 @@ nav a:hover::after { width: 100%; }
 }
 .hero-visual-inner svg { opacity: 0.5; }
 
+/* ============ SECTION BANNERS ============ */
+.section-banner {
+  position: relative;
+  width: 100vw;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  height: 360px;
+  overflow: hidden;
+  margin-bottom: 80px;
+}
+.section-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.section-banner::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(43, 28, 18, 0.15) 0%, rgba(43, 28, 18, 0.05) 100%);
+  pointer-events: none;
+}
+@media (max-width: 720px) {
+  .section-banner { height: 220px; margin-bottom: 48px; }
+}
+
 /* ============ SECTION BASE ============ */
 section {
   position: relative; z-index: 2;
@@ -315,6 +343,7 @@ section {
   line-height: 1.75;
 }
 .about-body p:last-child { margin-bottom: 0; }
+.about-body .section-eyebrow.center { justify-content: center; margin-bottom: 20px; }
 .signature {
   margin-top: 32px;
   font-family: var(--font-display);
@@ -839,7 +868,7 @@ footer {
       </div>
     </div>
     <div class="hero-visual fade-up">
-      <img src="https://res.cloudinary.com/donbuqwxp/image/upload/q_auto/f_auto/v1779717787/IMG_4991_plgyhu.heic" alt="LesDishes artisan sourdough" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+      <img src="https://res.cloudinary.com/donbuqwxp/image/upload/q_auto/f_auto/v1779717675/829AE8B5-44BC-4790-991D-B25C71D40B23_nba6vz.png" alt="LesDishes Bakery" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
     </div>
   </div>
 </section>
@@ -847,17 +876,12 @@ footer {
 <!-- ============ ABOUT ============ -->
 <section id="about">
   <div class="container">
-    <div class="about-grid">
-      <div class="about-visual fade-up">
-        <img src="https://res.cloudinary.com/donbuqwxp/image/upload/q_auto/f_auto/v1779717787/IMG_4991_plgyhu.heic" alt="LesDishes artisan sourdough" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
-      </div>
-      <div class="about-body fade-up">
-        <div class="section-eyebrow">About LesDishes</div>
-        <h2 class="section-title">A chef's touch, <em>made by hand.</em></h2>
-        <p>LesDishes is a small-batch sourdough bakery and seasonal catering studio founded in 2023, built on the belief that food made slowly tastes better — and feels different on the table.</p>
-        <p>Every loaf, every spread, every brunch box is made in small batches with intention. From naturally fermented sourdough to thoughtfully curated catering menus, we bring a chef's care to everyday eating.</p>
-        <p class="signature">— Simple elegance in every bite.</p>
-      </div>
+    <div class="about-body fade-up" style="text-align:center; max-width: 720px; margin: 0 auto;">
+      <div class="section-eyebrow center">About LesDishes</div>
+      <h2 class="section-title">A chef's touch, <em>made by hand.</em></h2>
+      <p>LesDishes is a small-batch sourdough bakery and seasonal catering studio founded in 2023, built on the belief that food made slowly tastes better — and feels different on the table.</p>
+      <p>Every loaf, every spread, every brunch box is made in small batches with intention. From naturally fermented sourdough to thoughtfully curated catering menus, we bring a chef's care to everyday eating.</p>
+      <p class="signature">— Simple elegance in every bite.</p>
     </div>
   </div>
 </section>
@@ -886,24 +910,14 @@ footer {
       <p>The kind of bread you think about later. Our weekly menu rotates with the seasons — here's what's usually on the table.</p>
     </div>
     <div class="offerings-grid">
-      <!-- Artisan Loaves -->
+      <!-- Seasonal Artisan Loaf -->
       <div class="offering-card fade-up">
         <div class="offering-image">
-          <img src="https://res.cloudinary.com/donbuqwxp/image/upload/q_auto/f_auto/v1779718834/artisan_loaf_cagxny.jpg" alt="Artisan Loaves" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+          <img src="https://res.cloudinary.com/donbuqwxp/image/upload/q_auto/f_auto/v1779718839/seasonal_artisanal_loaf_mqzc5s.heic" alt="Seasonal Artisan Loaf" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
         </div>
         <div class="offering-content">
-          <h3>Artisan Loaves</h3>
-          <p>Typically 3 flavors each week — a classic, a savory, and a sweet.</p>
-        </div>
-      </div>
-      <!-- Focaccia -->
-      <div class="offering-card fade-up">
-        <div class="offering-image">
-          <img src="https://res.cloudinary.com/donbuqwxp/image/upload/q_auto/f_auto/v1779718836/focaccia_xah0tc.heic" alt="Focaccia" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
-        </div>
-        <div class="offering-content">
-          <h3>Focaccia</h3>
-          <p>Two flavors weekly — rosemary &amp; sea salt, plus a rotating sweet or savory.</p>
+          <h3>Seasonal Artisan Loaf</h3>
+          <p>Our classic loaf with a monthly seasonal twist.</p>
         </div>
       </div>
       <!-- Bagels -->
@@ -916,13 +930,33 @@ footer {
           <p>Two to three flavors — perfectly chewy, slightly addictive.</p>
         </div>
       </div>
-      <!-- Sweets (Rotating) -->
+      <!-- Focaccia -->
       <div class="offering-card fade-up">
         <div class="offering-image">
-          <img src="https://res.cloudinary.com/donbuqwxp/image/upload/q_auto/f_auto/v1779718792/cinnamon_rolls_nkwfd2.heic" alt="Seasonal sweets" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+          <img src="https://res.cloudinary.com/donbuqwxp/image/upload/v1779718836/focaccia_xah0tc.heic" alt="Focaccia" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
         </div>
         <div class="offering-content">
-          <h3>Seasonal Sweets</h3>
+          <h3>Focaccia</h3>
+          <p>Two flavors weekly — rosemary &amp; sea salt, plus a rotating sweet or savory.</p>
+        </div>
+      </div>
+      <!-- Artisan Loaf -->
+      <div class="offering-card fade-up">
+        <div class="offering-image">
+          <img src="https://res.cloudinary.com/donbuqwxp/image/upload/q_auto/f_auto/v1779717788/IMG_5011_t0mipo.jpg" alt="Artisan Loaf" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div class="offering-content">
+          <h3>Artisan Loaf</h3>
+          <p>Classic sourdough — three flavors each week, classic, savory, and sweet.</p>
+        </div>
+      </div>
+      <!-- Sweet Breads -->
+      <div class="offering-card fade-up">
+        <div class="offering-image">
+          <img src="https://res.cloudinary.com/donbuqwxp/image/upload/q_auto/f_auto/v1779721521/IMG_6149_sq2jzm.heic" alt="Sweet Breads" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div class="offering-content">
+          <h3>Sweet Breads</h3>
           <p>Rotating weekly — cinnamon rolls, scones, muffins, coffee cakes, banana bread. Whatever's in season.</p>
         </div>
       </div>
@@ -936,7 +970,10 @@ footer {
 </section>
 
 <!-- ============ SWEET TREATS ============ -->
-<section id="sweet-treats" class="offerings" style="background: var(--cream);">
+<section id="sweet-treats" class="offerings" style="background: var(--cream); padding-top: 0;">
+  <div class="section-banner">
+    <img src="https://res.cloudinary.com/donbuqwxp/image/upload/q_auto/f_auto/v1779718793/sweet_treats_jbyaxf.jpg" alt="Custom orders">
+  </div>
   <div class="container">
     <div class="offerings-header fade-up">
       <div class="section-eyebrow center">Custom &amp; Specialty</div>
@@ -1042,8 +1079,11 @@ footer {
 </section>
 
 <!-- ============ CATERING ============ -->
-<section id="catering">
-  <div class="container">
+<section id="catering" style="padding-top: 0;">
+  <div class="section-banner">
+    <img src="https://res.cloudinary.com/donbuqwxp/image/upload/q_auto/f_auto/v1779717787/IMG_4991_plgyhu.heic" alt="LesDishes catering">
+  </div>
+  <div class="container" style="padding-top: 0;">
     <div class="catering-grid">
       <div class="catering-intro fade-up">
         <div class="section-eyebrow">Catering</div>
