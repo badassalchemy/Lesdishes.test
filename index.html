@@ -1,0 +1,1226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>LesDishes Bakery &amp; Catering — Simple Elegance in Every Bite</title>
+<meta name="description" content="Artisan sourdough bakery & seasonal catering. Slow food, thoughtfully made. Small-batch sourdough, curated menus, and elevated everyday eating." />
+<meta property="og:title" content="LesDishes Bakery & Catering" />
+<meta property="og:description" content="Slow food, thoughtfully made. Small-batch sourdough, curated menus, and elevated everyday eating." />
+<meta property="og:type" content="website" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   LESDISHES BAKERY & CATERING
+   Palette: warm cream + dark espresso brown + soft gold
+   Type:    Fraunces (display) + Inter (body)
+   ============================================================ */
+:root {
+  --cream:        #F4EAD5;
+  --cream-soft:   #F9F1E0;
+  --cream-deep:   #E8D9BC;
+  --brown-deep:   #2A1A0F;
+  --brown:        #3D2718;
+  --brown-mid:    #6B4A2E;
+  --gold:         #B8894A;
+  --gold-soft:    #D4A968;
+  --ink:          #1F1408;
+  --line:         rgba(43, 28, 18, 0.15);
+
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body:    'Inter', system-ui, sans-serif;
+
+  --maxw: 1280px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+body {
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* paper texture */
+body::before {
+  content: '';
+  position: fixed; inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0.17 0 0 0 0 0.11 0 0 0 0 0.07 0 0 0 0.04 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  pointer-events: none; z-index: 1; opacity: 0.5;
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+
+/* ============ HEADER (DARK BROWN) ============ */
+header {
+  position: fixed; top: 0; left: 0; right: 0;
+  background: var(--brown-deep);
+  z-index: 100;
+  border-bottom: 1px solid rgba(184, 137, 74, 0.2);
+}
+.nav-wrap {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 14px 32px;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 24px;
+}
+.logo-block {
+  display: flex; align-items: center; gap: 14px;
+  color: var(--cream); text-decoration: none;
+}
+.logo-img {
+  height: 64px;
+  width: auto;
+  display: block;
+  transition: opacity 0.3s ease;
+}
+.logo-img:hover { opacity: 0.85; }
+
+.logo-placeholder {
+  width: 58px; height: 58px;
+  border-radius: 50%;
+  background: var(--brown-deep);
+  border: 1.5px solid var(--gold-soft);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--gold-soft);
+  font-family: var(--font-display);
+  font-weight: 500; font-size: 11px;
+  letter-spacing: 1.5px; text-align: center;
+  line-height: 1.1; padding: 4px;
+}
+.logo-text {
+  font-family: var(--font-display);
+  font-weight: 500; font-size: 18px;
+  letter-spacing: 0.5px; line-height: 1.1;
+  color: var(--cream);
+}
+.logo-text small {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 9px; font-weight: 400;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--gold-soft);
+  margin-top: 4px;
+}
+
+nav ul { display: flex; list-style: none; gap: 36px; }
+nav a {
+  color: var(--cream); text-decoration: none;
+  font-size: 12px; font-weight: 500;
+  letter-spacing: 1.8px; text-transform: uppercase;
+  position: relative; padding: 8px 0;
+  transition: color 0.3s ease;
+}
+nav a::after {
+  content: ''; position: absolute;
+  bottom: 0; left: 0;
+  width: 0; height: 1px;
+  background: var(--gold-soft);
+  transition: width 0.3s ease;
+}
+nav a:hover { color: var(--gold-soft); }
+nav a:hover::after { width: 100%; }
+
+.mobile-toggle {
+  display: none;
+  background: none; border: none;
+  color: var(--cream); cursor: pointer; padding: 8px;
+}
+.mobile-toggle svg { width: 26px; height: 26px; }
+
+/* ============ HERO ============ */
+.hero {
+  padding: 160px 32px 100px;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  position: relative; z-index: 2;
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 72px; align-items: center;
+}
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: 11px; font-weight: 500;
+  letter-spacing: 3px; text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 24px;
+  display: flex; align-items: center; gap: 12px;
+}
+.eyebrow::before {
+  content: ''; width: 32px; height: 1px;
+  background: var(--gold);
+}
+.hero h1 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(2.4rem, 5vw, 4.2rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--brown);
+  margin-bottom: 28px;
+}
+.hero h1 em {
+  font-style: italic; font-weight: 300;
+  color: var(--brown-mid);
+}
+.hero-sub {
+  font-size: 17px;
+  color: var(--brown);
+  margin-bottom: 14px;
+  max-width: 480px;
+  font-weight: 500;
+}
+.hero-body {
+  font-size: 16px;
+  color: var(--brown-mid);
+  max-width: 480px;
+  margin-bottom: 40px;
+  line-height: 1.7;
+}
+.cta-row {
+  display: flex; gap: 16px; flex-wrap: wrap;
+}
+
+/* ============ BUTTONS ============ */
+.btn {
+  display: inline-flex; align-items: center;
+  gap: 10px;
+  padding: 16px 32px;
+  font-family: var(--font-body);
+  font-size: 12px; font-weight: 500;
+  letter-spacing: 2px; text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  cursor: pointer; border: none;
+}
+.btn-primary {
+  background: var(--brown); color: var(--cream);
+}
+.btn-primary:hover {
+  background: var(--brown-deep);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(43, 28, 18, 0.25);
+}
+.btn-secondary {
+  background: transparent;
+  color: var(--brown);
+  border: 1px solid var(--brown);
+}
+.btn-secondary:hover {
+  background: var(--brown); color: var(--cream);
+}
+.btn-arrow { transition: transform 0.3s ease; }
+.btn:hover .btn-arrow { transform: translateX(4px); }
+
+/* hero visual */
+.hero-visual {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--cream-deep);
+  box-shadow: 0 20px 60px rgba(43, 28, 18, 0.18);
+}
+.placeholder-tag {
+  position: absolute;
+  bottom: 16px; left: 16px;
+  background: rgba(43, 28, 18, 0.85);
+  color: var(--cream);
+  padding: 7px 13px;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border-radius: 2px;
+  z-index: 2;
+}
+.hero-visual-inner {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  flex-direction: column;
+  font-family: var(--font-display);
+  font-style: italic;
+  color: var(--brown-mid);
+  font-size: 17px; text-align: center;
+  padding: 32px; gap: 12px;
+}
+.hero-visual-inner svg { opacity: 0.5; }
+
+/* ============ SECTION BASE ============ */
+section {
+  position: relative; z-index: 2;
+  padding: 100px 32px;
+}
+.container { max-width: var(--maxw); margin: 0 auto; }
+
+.section-eyebrow {
+  font-size: 11px; font-weight: 500;
+  letter-spacing: 3px; text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 20px;
+  display: flex; align-items: center; gap: 12px;
+}
+.section-eyebrow::before {
+  content: ''; width: 32px; height: 1px;
+  background: var(--gold);
+}
+.section-eyebrow.center {
+  justify-content: center;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--brown);
+  margin-bottom: 24px;
+}
+.section-title em {
+  font-style: italic; font-weight: 300;
+}
+
+/* ============ ABOUT ============ */
+#about { background: var(--cream-soft); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 72px; align-items: center;
+}
+.about-visual {
+  aspect-ratio: 1;
+  background: var(--cream-deep);
+  border-radius: 12px;
+  position: relative; overflow: hidden;
+  box-shadow: 0 12px 40px rgba(43, 28, 18, 0.12);
+}
+.about-body p {
+  font-size: 17px;
+  color: var(--brown);
+  margin-bottom: 20px;
+  line-height: 1.75;
+}
+.about-body p:last-child { margin-bottom: 0; }
+.signature {
+  margin-top: 32px;
+  font-family: var(--font-display);
+  font-style: italic;
+  color: var(--gold);
+  font-size: 22px;
+  letter-spacing: -0.02em;
+}
+
+/* ============ KNEAD STATEMENT ============ */
+#knead { text-align: center; padding: 140px 32px; }
+.knead-title {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: clamp(3.5rem, 9vw, 7rem);
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  color: var(--brown);
+  margin-bottom: 48px;
+}
+.knead-title em {
+  font-style: italic; color: var(--gold);
+}
+.knead-body { max-width: 620px; margin: 0 auto; }
+.knead-body p {
+  font-size: 17px;
+  color: var(--brown);
+  margin-bottom: 20px;
+  line-height: 1.75;
+}
+.knead-divider {
+  width: 60px; height: 1px;
+  background: var(--gold);
+  margin: 40px auto;
+}
+
+/* ============ BAKERY & SWEET TREATS (offerings) ============ */
+.offerings {
+  background: var(--cream-soft);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.offerings-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 64px;
+}
+.offerings-header p {
+  font-size: 17px;
+  color: var(--brown-mid);
+  line-height: 1.7;
+  margin-top: 8px;
+}
+.offerings-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+.offering-card {
+  background: var(--cream);
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.offering-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 50px rgba(43, 28, 18, 0.15);
+}
+.offering-image {
+  aspect-ratio: 1 / 1;
+  background: var(--cream-deep);
+  position: relative; overflow: hidden;
+}
+.offering-image-inner {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  flex-direction: column;
+  font-family: var(--font-display);
+  font-style: italic;
+  color: var(--brown-mid);
+  font-size: 14px; text-align: center;
+  padding: 20px; gap: 8px;
+}
+.offering-image-inner svg { opacity: 0.4; }
+.offering-content { padding: 28px 28px 32px; }
+.offering-content h3 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 22px;
+  letter-spacing: -0.01em;
+  color: var(--brown);
+  margin-bottom: 8px;
+}
+.offering-content p {
+  font-size: 14px;
+  color: var(--brown-mid);
+  line-height: 1.6;
+}
+.offerings-cta {
+  text-align: center; margin-top: 56px;
+}
+
+/* sweet treats - same structure */
+#sweet-treats { background: var(--cream); }
+
+/* ============ MARKET DATES ============ */
+#market {
+  background: var(--cream-soft);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.market-grid {
+  display: block;
+  max-width: 880px;
+  margin: 0 auto;
+}
+.market-visual {
+  aspect-ratio: 4/5;
+  background: var(--cream-deep);
+  border-radius: 4px; overflow: hidden;
+  position: relative;
+  box-shadow: 0 12px 40px rgba(43, 28, 18, 0.12);
+}
+.market-body p {
+  font-size: 17px;
+  color: var(--brown-mid);
+  margin-bottom: 28px;
+  line-height: 1.7;
+  max-width: 480px;
+}
+.market-list {
+  margin-top: 32px;
+  border-top: 1px solid var(--line);
+}
+.market-item {
+  display: grid;
+  grid-template-columns: 100px 1fr auto;
+  gap: 20px;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--line);
+  align-items: center;
+}
+.market-date {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 16px;
+  color: var(--gold);
+  letter-spacing: 0.5px;
+}
+.market-name {
+  font-family: var(--font-display);
+  font-size: 19px;
+  color: var(--brown);
+  font-weight: 500;
+}
+.market-name small {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--brown-mid);
+  margin-top: 4px;
+  letter-spacing: 0;
+}
+.market-time {
+  font-size: 13px;
+  color: var(--brown-mid);
+  letter-spacing: 0.5px;
+}
+.market-placeholder {
+  padding: 24px 0;
+  color: var(--brown-mid);
+  font-style: italic;
+  font-family: var(--font-display);
+  font-size: 16px;
+  text-align: center;
+}
+
+/* ============ CATERING ============ */
+#catering {
+  background: var(--brown);
+  color: var(--cream);
+  border-top: 1px solid var(--brown-deep);
+}
+#catering .section-eyebrow {
+  color: var(--gold-soft);
+}
+#catering .section-eyebrow::before {
+  background: var(--gold-soft);
+}
+#catering .section-title { color: var(--cream); }
+#catering .section-title em { color: var(--gold-soft); }
+
+.catering-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 72px;
+  align-items: start;
+}
+.catering-intro p {
+  font-size: 17px;
+  color: rgba(244, 234, 213, 0.85);
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+.catering-list {
+  list-style: none;
+  margin: 36px 0;
+}
+.catering-list li {
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(212, 169, 104, 0.2);
+  font-family: var(--font-display);
+  font-size: 17px;
+  color: var(--cream);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.catering-list li::before {
+  content: '✦';
+  color: var(--gold-soft);
+  font-size: 14px;
+}
+.catering-min {
+  margin-top: 32px;
+  padding: 24px;
+  background: rgba(212, 169, 104, 0.08);
+  border-left: 2px solid var(--gold-soft);
+  font-size: 14px;
+  color: var(--cream);
+  line-height: 1.6;
+}
+.catering-min strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 18px;
+  color: var(--gold-soft);
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+/* form */
+.catering-form {
+  background: var(--cream);
+  color: var(--ink);
+  padding: 48px;
+  border-radius: 4px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+.form-title {
+  font-family: var(--font-display);
+  font-size: 26px;
+  color: var(--brown);
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+.form-subtitle {
+  font-size: 14px;
+  color: var(--brown-mid);
+  margin-bottom: 32px;
+}
+.form-row {
+  margin-bottom: 22px;
+}
+.form-row.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.form-row label {
+  display: block;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--brown-mid);
+  margin-bottom: 8px;
+}
+.form-row input,
+.form-row select,
+.form-row textarea {
+  width: 100%;
+  padding: 14px 16px;
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--ink);
+  background: var(--cream-soft);
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+.form-row input:focus,
+.form-row select:focus,
+.form-row textarea:focus {
+  outline: none;
+  border-color: var(--gold);
+  background: #fff;
+}
+.form-row textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+.form-submit {
+  width: 100%;
+  padding: 18px;
+  background: var(--brown);
+  color: var(--cream);
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  margin-top: 8px;
+}
+.form-submit:hover {
+  background: var(--brown-deep);
+  transform: translateY(-2px);
+}
+.form-note {
+  margin-top: 16px;
+  font-size: 12px;
+  color: var(--brown-mid);
+  text-align: center;
+  font-style: italic;
+}
+
+/* ============ SOCIALS ============ */
+#socials {
+  text-align: center;
+  background: var(--cream);
+}
+.socials-title {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--brown);
+  margin-bottom: 16px;
+}
+.socials-title em { font-style: italic; color: var(--gold); }
+.socials-sub {
+  font-size: 16px;
+  color: var(--brown-mid);
+  max-width: 520px;
+  margin: 0 auto 40px;
+  line-height: 1.6;
+  font-style: italic;
+  font-family: var(--font-display);
+}
+.socials-row {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.social-icon {
+  width: 60px; height: 60px;
+  border-radius: 50%;
+  background: var(--brown);
+  color: var(--cream);
+  display: flex; align-items: center; justify-content: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.social-icon:hover {
+  background: var(--gold);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(43, 28, 18, 0.2);
+}
+.social-icon svg { width: 24px; height: 24px; }
+
+/* ============ FOOTER ============ */
+footer {
+  background: var(--brown-deep);
+  color: var(--cream);
+  padding: 64px 32px 32px;
+  position: relative; z-index: 2;
+}
+.footer-grid {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  gap: 60px;
+  padding-bottom: 48px;
+  border-bottom: 1px solid rgba(212, 169, 104, 0.15);
+}
+.footer-col h4 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold-soft);
+  margin-bottom: 18px;
+}
+.footer-col p,
+.footer-col a {
+  font-size: 14px;
+  color: rgba(244, 234, 213, 0.75);
+  text-decoration: none;
+  line-height: 1.8;
+  display: block;
+}
+.footer-col a:hover { color: var(--gold-soft); }
+.footer-brand-line {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 17px;
+  color: var(--cream);
+  margin-bottom: 12px;
+}
+.footer-bottom {
+  max-width: var(--maxw);
+  margin: 32px auto 0;
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: rgba(244, 234, 213, 0.5);
+  letter-spacing: 0.5px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* ============ ANIMATIONS ============ */
+.fade-up {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.fade-up.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 960px) {
+  .hero-grid, .about-grid, .market-grid, .catering-grid { grid-template-columns: 1fr; gap: 48px; }
+  .offerings-grid { grid-template-columns: repeat(2, 1fr); }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+}
+@media (max-width: 720px) {
+  nav ul { display: none; }
+  .mobile-toggle { display: block; }
+  nav.open ul {
+    display: flex;
+    position: absolute;
+    top: 100%;
+    left: 0; right: 0;
+    background: var(--brown-deep);
+    flex-direction: column;
+    padding: 24px 32px;
+    gap: 20px;
+    border-top: 1px solid rgba(184, 137, 74, 0.2);
+  }
+  .nav-wrap { padding: 12px 20px; }
+  .logo-img { height: 52px; }
+  .hero { padding: 130px 20px 70px; }
+  section { padding: 70px 20px; }
+  .offerings-grid { grid-template-columns: 1fr; }
+  .catering-form { padding: 32px 24px; }
+  .form-row.two-col { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+  .footer-bottom { flex-direction: column; text-align: center; }
+  .knead-title { font-size: clamp(2.8rem, 12vw, 4rem); }
+  .market-item { grid-template-columns: 1fr; gap: 6px; }
+  .market-time { font-size: 12px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header>
+  <div class="nav-wrap">
+    <a href="#top" class="logo-block">
+      <!-- LOGO -->
+      <img src="https://res.cloudinary.com/donbuqwxp/image/upload/q_auto/f_auto/v1779720912/Untitled_design_ewwzgc.png" alt="LesDishes Bakery & Catering" class="logo-img">
+    </a>
+    <nav id="primary-nav">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#knead">What We Do</a></li>
+        <li><a href="#bakery">Bakery</a></li>
+        <li><a href="#sweet-treats">Custom Orders</a></li>
+        <li><a href="#market">Markets</a></li>
+        <li><a href="#catering">Catering</a></li>
+      </ul>
+    </nav>
+    <button class="mobile-toggle" aria-label="Menu" onclick="document.getElementById('primary-nav').classList.toggle('open')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="6" x2="21" y2="6"/>
+        <line x1="3" y1="12" x2="21" y2="12"/>
+        <line x1="3" y1="18" x2="21" y2="18"/>
+      </svg>
+    </button>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="hero-grid">
+    <div class="fade-up">
+      <div class="eyebrow">Since 2023 · Simple elegance</div>
+      <h1>Artisan Sourdough Bakery <em>&amp; Seasonal Catering</em></h1>
+      <p class="hero-sub">Slow food, thoughtfully made.</p>
+      <p class="hero-body">Small-batch sourdough, curated menus, and elevated everyday eating.</p>
+      <div class="cta-row">
+        <a href="https://www.hotplate.com/lesdishes" target="_blank" rel="noopener" class="btn btn-primary">
+          Order Bakery Items <span class="btn-arrow">→</span>
+        </a>
+        <a href="#catering" class="btn btn-secondary">
+          Catering Inquiry
+        </a>
+      </div>
+    </div>
+    <div class="hero-visual fade-up">
+      <img src="https://res.cloudinary.com/donbuqwxp/image/upload/q_auto/f_auto/v1779717787/IMG_4991_plgyhu.heic" alt="LesDishes artisan sourdough" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-visual fade-up">
+        <img src="https://res.cloudinary.com/donbuqwxp/image/upload/q_auto/f_auto/v1779717787/IMG_4991_plgyhu.heic" alt="LesDishes artisan sourdough" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+      </div>
+      <div class="about-body fade-up">
+        <div class="section-eyebrow">About LesDishes</div>
+        <h2 class="section-title">A chef's touch, <em>made by hand.</em></h2>
+        <p>LesDishes is a small-batch sourdough bakery and seasonal catering studio founded in 2023, built on the belief that food made slowly tastes better — and feels different on the table.</p>
+        <p>Every loaf, every spread, every brunch box is made in small batches with intention. From naturally fermented sourdough to thoughtfully curated catering menus, we bring a chef's care to everyday eating.</p>
+        <p class="signature">— Simple elegance in every bite.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHAT DO YOU KNEAD ============ -->
+<section id="knead">
+  <div class="container">
+    <div class="fade-up">
+      <h2 class="knead-title">What do <em>you knead?</em></h2>
+      <div class="knead-body">
+        <p><strong style="color:var(--brown);">Freshly baked. Made to be shared.</strong></p>
+        <div class="knead-divider"></div>
+        <p>From naturally fermented sourdough to stacked sandwiches and seasonal spreads, everything is made in small batches with intention.</p>
+        <p>Whether you're ordering for your week or hosting something special — LesDishes brings a chef's touch to the table.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BAKERY ITEMS ============ -->
+<section id="bakery" class="offerings">
+  <div class="container">
+    <div class="offerings-header fade-up">
+      <div class="section-eyebrow center">The Bakery</div>
+      <h2 class="section-title">Slow-fermented sourdough.<br><em>Golden crusts. Soft centers.</em></h2>
+      <p>The kind of bread you think about later. Our weekly menu rotates with the seasons — here's what's usually on the table.</p>
+    </div>
+    <div class="offerings-grid">
+      <!-- Artisan Loaves -->
+      <div class="offering-card fade-up">
+        <div class="offering-image">
+          <img src="https://res.cloudinary.com/donbuqwxp/image/upload/q_auto/f_auto/v1779718834/artisan_loaf_cagxny.jpg" alt="Artisan Loaves" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div class="offering-content">
+          <h3>Artisan Loaves</h3>
+          <p>Typically 3 flavors each week — a classic, a savory, and a sweet.</p>
+        </div>
+      </div>
+      <!-- Focaccia -->
+      <div class="offering-card fade-up">
+        <div class="offering-image">
+          <img src="https://res.cloudinary.com/donbuqwxp/image/upload/q_auto/f_auto/v1779718836/focaccia_xah0tc.heic" alt="Focaccia" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div class="offering-content">
+          <h3>Focaccia</h3>
+          <p>Two flavors weekly — rosemary &amp; sea salt, plus a rotating sweet or savory.</p>
+        </div>
+      </div>
+      <!-- Bagels -->
+      <div class="offering-card fade-up">
+        <div class="offering-image">
+          <img src="https://res.cloudinary.com/donbuqwxp/image/upload/q_auto/f_auto/v1779718835/bagels_rgtpiy.heic" alt="Bagels" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div class="offering-content">
+          <h3>Bagels</h3>
+          <p>Two to three flavors — perfectly chewy, slightly addictive.</p>
+        </div>
+      </div>
+      <!-- Sweets (Rotating) -->
+      <div class="offering-card fade-up">
+        <div class="offering-image">
+          <img src="https://res.cloudinary.com/donbuqwxp/image/upload/q_auto/f_auto/v1779718792/cinnamon_rolls_nkwfd2.heic" alt="Seasonal sweets" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div class="offering-content">
+          <h3>Seasonal Sweets</h3>
+          <p>Rotating weekly — cinnamon rolls, scones, muffins, coffee cakes, banana bread. Whatever's in season.</p>
+        </div>
+      </div>
+    </div>
+    <div class="offerings-cta">
+      <a href="https://www.hotplate.com/lesdishes" target="_blank" rel="noopener" class="btn btn-primary">
+        Order on Hotplate <span class="btn-arrow">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SWEET TREATS ============ -->
+<section id="sweet-treats" class="offerings" style="background: var(--cream);">
+  <div class="container">
+    <div class="offerings-header fade-up">
+      <div class="section-eyebrow center">Custom &amp; Specialty</div>
+      <h2 class="section-title">A little soft, <em>a little indulgent,</em><br>always from scratch.</h2>
+      <p>Made-to-order sweets for the moments that deserve more than store-bought.</p>
+    </div>
+    <div class="offerings-grid">
+      <div class="offering-card fade-up">
+        <div class="offering-image">
+          <img src="https://res.cloudinary.com/donbuqwxp/image/upload/q_auto/f_auto/v1779718952/seasonal_pies_xolhxs.jpg" alt="Seasonal Pies" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div class="offering-content">
+          <h3>Seasonal Pies</h3>
+          <p>Apple, cherry, pecan or pumpkin — have one, have all.</p>
+        </div>
+      </div>
+      <div class="offering-card fade-up">
+        <div class="offering-image">
+          <img src="https://res.cloudinary.com/donbuqwxp/image/upload/q_auto/f_auto/v1779720576/shooters_qziz1k.heic" alt="Dessert Shooters" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div class="offering-content">
+          <h3>Shooters</h3>
+          <p>Mousse &amp; pudding favorites served shooter-style.</p>
+        </div>
+      </div>
+      <div class="offering-card fade-up">
+        <div class="offering-image">
+          <img src="https://res.cloudinary.com/donbuqwxp/image/upload/q_auto/f_auto/v1779718792/cinnamon_rolls_nkwfd2.heic" alt="Cinnamon Rolls" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div class="offering-content">
+          <h3>Cinnamon Rolls</h3>
+          <p>Soft, gooey, brown sugar dreams — by the half-dozen or by the tray.</p>
+        </div>
+      </div>
+    </div>
+    <div class="offerings-cta">
+      <a href="https://www.hotplate.com/lesdishes" target="_blank" rel="noopener" class="btn btn-primary">
+        View Custom Order Menu <span class="btn-arrow">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MARKET DATES ============ -->
+<section id="market">
+  <div class="container">
+    <div class="market-grid">
+      <div class="fade-up" style="text-align:center; margin-bottom: 48px;">
+        <div class="section-eyebrow center">Find Us</div>
+        <h2 class="section-title">At a market <em>near you.</em></h2>
+        <div class="market-body">
+          <p style="margin: 0 auto; max-width: 560px;">Catch us in person at local markets and pop-ups across the DFW area. Fresh loaves, sweet things, and good company — first come, first served until we sell out.</p>
+        </div>
+      </div>
+      <div class="fade-up">
+        <div class="market-list">
+          <div class="market-item">
+            <div class="market-date">MAY 30</div>
+            <div class="market-name">Bluegrass on Ballard<small>Local market &amp; community event</small></div>
+            <div class="market-time">TIME TBA</div>
+          </div>
+          <div class="market-item">
+            <div class="market-date">JUN 6</div>
+            <div class="market-name">Wylie Urban Farm &amp; Market<small>Wylie, TX</small></div>
+            <div class="market-time">TIME TBA</div>
+          </div>
+          <div class="market-item">
+            <div class="market-date">JUN 13</div>
+            <div class="market-name">Millhouse Makers Market<small>Handcrafted goods market</small></div>
+            <div class="market-time">TIME TBA</div>
+          </div>
+          <div class="market-item">
+            <div class="market-date">JUL 11</div>
+            <div class="market-name">Millhouse Makers Market<small>Handcrafted goods market</small></div>
+            <div class="market-time">TIME TBA</div>
+          </div>
+          <div class="market-item">
+            <div class="market-date">JUL 25</div>
+            <div class="market-name">Wylie Urban Farm &amp; Market<small>Wylie, TX</small></div>
+            <div class="market-time">TIME TBA</div>
+          </div>
+          <div class="market-item">
+            <div class="market-date">OCT 25</div>
+            <div class="market-name">The Boho Mini Market<small>@ Klyde Warren Park, Dallas</small></div>
+            <div class="market-time">TIME TBA</div>
+          </div>
+          <div class="market-item">
+            <div class="market-date">NOV 22</div>
+            <div class="market-name">The Boho Market<small>@ Klyde Warren Park, Dallas</small></div>
+            <div class="market-time">TIME TBA</div>
+          </div>
+          <div class="market-item">
+            <div class="market-date">DEC 12</div>
+            <div class="market-name">CityLine Merry Market<small>Richardson, TX</small></div>
+            <div class="market-time">TIME TBA</div>
+          </div>
+          <div class="market-placeholder">— More dates added throughout the season —</div>
+        </div>
+      </div>
+      <div class="market-visual fade-up" style="display:none;"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CATERING ============ -->
+<section id="catering">
+  <div class="container">
+    <div class="catering-grid">
+      <div class="catering-intro fade-up">
+        <div class="section-eyebrow">Catering</div>
+        <h2 class="section-title">Questions, cravings, <em>or cake ideas?</em></h2>
+        <p>We're all ears. From intimate gatherings to office spreads, every catering menu is built around your event — beautifully styled, freshly made, and ready to impress.</p>
+        <ul class="catering-list">
+          <li>Sandwich Trays <small style="display:block;font-family:var(--font-body);font-size:13px;color:rgba(244,234,213,0.6);margin-top:2px;font-weight:400;letter-spacing:0;">in-house sourdough, sandwich loaves, ciabatta</small></li>
+          <li>Deli &amp; Cheese Charcuterie</li>
+          <li>Fruit Charcuterie</li>
+          <li>Holiday Grazing Boards</li>
+          <li>Small Bites</li>
+          <li>Dessert Shooters</li>
+        </ul>
+        <div class="catering-min">
+          <strong>Pricing &amp; Minimums</strong>
+          Pricing varies based on selections. Minimum 25 guests. Reach out for a free custom quote — we'll respond within 48 hours.
+        </div>
+      </div>
+
+      <!-- FORM -->
+      <form class="catering-form fade-up" action="https://formspree.io/f/YOUR_FORM_ID_HERE" method="POST" id="catering-form">
+        <div class="form-title">Tell us about your event</div>
+        <div class="form-subtitle">We'll get back to you within 48 hours.</div>
+
+        <div class="form-row two-col">
+          <div>
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+        </div>
+
+        <div class="form-row two-col">
+          <div>
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone">
+          </div>
+          <div>
+            <label for="event_type">Event Type</label>
+            <select id="event_type" name="event_type" required>
+              <option value="">Select one</option>
+              <option>Birthday / Celebration</option>
+              <option>Brunch / Lunch</option>
+              <option>Corporate / Office</option>
+              <option>Wedding / Shower</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row two-col">
+          <div>
+            <label for="event_date">Event Date</label>
+            <input type="date" id="event_date" name="event_date" required>
+          </div>
+          <div>
+            <label for="event_time">Event Time</label>
+            <input type="time" id="event_time" name="event_time">
+          </div>
+        </div>
+
+        <div class="form-row two-col">
+          <div>
+            <label for="guest_count">Number of Guests *</label>
+            <input type="number" id="guest_count" name="guest_count" min="25" placeholder="Min. 25" required>
+          </div>
+          <div>
+            <label for="location">Location / Venue</label>
+            <input type="text" id="location" name="location" placeholder="City or address" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <label for="menu_interest">What you're interested in</label>
+          <select id="menu_interest" name="menu_interest">
+            <option value="">Select one (or note in message below)</option>
+            <option>Sandwich Trays</option>
+            <option>Deli &amp; Cheese Charcuterie</option>
+            <option>Fruit Charcuterie</option>
+            <option>Holiday Grazing Boards</option>
+            <option>Small Bites</option>
+            <option>Dessert Shooters</option>
+            <option>Mix / Not sure yet</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <label for="allergies">Allergies or dietary restrictions</label>
+          <input type="text" id="allergies" name="allergies" placeholder="Gluten, nuts, dairy, vegan, etc.">
+        </div>
+
+        <div class="form-row">
+          <label for="message">Anything else we should know?</label>
+          <textarea id="message" name="message" placeholder="Theme, special requests, budget range..."></textarea>
+        </div>
+
+        <button type="submit" class="form-submit">Request Free Quote →</button>
+        <p class="form-note">Minimum 25 guests. We'll respond within 48 hours.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SOCIALS ============ -->
+<section id="socials">
+  <div class="container fade-up">
+    <div class="section-eyebrow center">Stay In Touch</div>
+    <h2 class="socials-title">Come watch us <em>make a mess</em><br>(and clean it up beautifully).</h2>
+    <p class="socials-sub">Behind-the-scenes bakes, weekly drops, and the occasional flour-covered selfie. Follow along.</p>
+    <div class="socials-row">
+      <a href="#" class="social-icon" aria-label="Instagram" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <rect x="3" y="3" width="18" height="18" rx="5"/>
+          <circle cx="12" cy="12" r="4"/>
+          <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor"/>
+        </svg>
+      </a>
+      <a href="#" class="social-icon" aria-label="Facebook" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M13.5 22v-9h3l.5-3.5h-3.5V7.2c0-1 .3-1.7 1.8-1.7H17V2.2C16.6 2.1 15.4 2 14 2c-2.9 0-4.9 1.8-4.9 5v2.5H6V13h3.1v9h4.4z"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-col">
+      <p class="footer-brand-line">LesDishes Bakery &amp; Catering</p>
+      <p>Simple elegance in every bite.</p>
+      <p style="margin-top:14px; font-style:italic; color: var(--gold-soft);">Est. 2023</p>
+    </div>
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <a href="#about">About</a>
+      <a href="#bakery">Bakery</a>
+      <a href="#sweet-treats">Custom Orders</a>
+      <a href="#market">Markets</a>
+      <a href="#catering">Catering</a>
+    </div>
+    <div class="footer-col">
+      <h4>Get In Touch</h4>
+      <a href="https://www.hotplate.com/lesdishes" target="_blank" rel="noopener">Order on Hotplate</a>
+      <a href="#catering">Catering Inquiries</a>
+      <a href="mailto:hello@lesdishes.com">hello@lesdishes.com</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 LesDishes Bakery &amp; Catering. All rights reserved.</span>
+    <span>Made with care, one loaf at a time.</span>
+  </div>
+</footer>
+
+<script>
+  // Fade-up on scroll
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.fade-up').forEach(el => io.observe(el));
+
+  // Close mobile nav after link click
+  document.querySelectorAll('nav a').forEach(a => {
+    a.addEventListener('click', () => {
+      document.getElementById('primary-nav').classList.remove('open');
+    });
+  });
+</script>
+
+</body>
+</html>
