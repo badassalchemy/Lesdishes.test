@@ -259,6 +259,95 @@ nav a:hover::after { width: 100%; }
 }
 .hero-visual-inner svg { opacity: 0.5; }
 
+/* ============ HOW IT WORKS (HOTPLATE) ============ */
+#how-it-works {
+  background: var(--brown);
+  color: var(--cream);
+}
+#how-it-works .section-eyebrow { color: var(--gold-soft); }
+#how-it-works .section-eyebrow::before { background: var(--gold-soft); }
+#how-it-works .section-title { color: var(--cream); }
+#how-it-works .section-title em { color: var(--gold-soft); }
+.hiw-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 56px;
+}
+.hiw-header p {
+  font-size: 17px;
+  color: rgba(244, 234, 213, 0.85);
+  line-height: 1.7;
+  margin-top: 8px;
+}
+.hiw-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-bottom: 48px;
+}
+.hiw-step {
+  background: rgba(212, 169, 104, 0.07);
+  border: 1px solid rgba(212, 169, 104, 0.2);
+  border-radius: 12px;
+  padding: 36px 28px;
+  text-align: center;
+}
+.hiw-step-num {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: var(--gold-soft);
+  color: var(--brown-deep);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 600; font-size: 20px;
+  margin: 0 auto 20px;
+}
+.hiw-step h3 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 20px;
+  color: var(--cream);
+  margin-bottom: 10px;
+}
+.hiw-step p {
+  font-size: 14px;
+  color: rgba(244, 234, 213, 0.75);
+  line-height: 1.6;
+}
+.hiw-note {
+  max-width: 760px;
+  margin: 0 auto 40px;
+  padding: 24px 28px;
+  background: rgba(212, 169, 104, 0.08);
+  border-left: 2px solid var(--gold-soft);
+  border-radius: 4px;
+  font-size: 15px;
+  color: rgba(244, 234, 213, 0.9);
+  line-height: 1.65;
+}
+.hiw-note strong { color: var(--gold-soft); }
+.hiw-cta {
+  text-align: center;
+}
+.hiw-cta .btn-primary {
+  background: var(--gold-soft);
+  color: var(--brown-deep);
+}
+.hiw-cta .btn-primary:hover {
+  background: var(--cream);
+}
+.hiw-immediate {
+  text-align: center;
+  margin-top: 28px;
+  font-size: 14px;
+  color: rgba(244, 234, 213, 0.7);
+  line-height: 1.7;
+}
+.hiw-immediate a { color: var(--gold-soft); text-decoration: underline; }
+@media (max-width: 720px) {
+  .hiw-steps { grid-template-columns: 1fr; }
+}
+
 /* ============ SECTION BANNERS ============ */
 .section-banner {
   position: relative;
@@ -836,6 +925,7 @@ footer {
         <li><a href="#knead">What We Do</a></li>
         <li><a href="#bakery">Bakery</a></li>
         <li><a href="#sweet-treats">Custom Orders</a></li>
+        <li><a href="#how-it-works">How to Order</a></li>
         <li><a href="#market">Markets</a></li>
         <li><a href="#catering">Catering</a></li>
       </ul>
@@ -1013,9 +1103,48 @@ footer {
       </div>
     </div>
     <div class="offerings-cta">
-      <a href="https://www.hotplate.com/lesdishes" target="_blank" rel="noopener" class="btn btn-primary">
-        View Custom Order Menu <span class="btn-arrow">→</span>
+      <a href="#custom-inquiry" class="btn btn-primary">
+        Request Custom Order <span class="btn-arrow">→</span>
       </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOW ORDERING WORKS ============ -->
+<section id="how-it-works">
+  <div class="container">
+    <div class="hiw-header fade-up">
+      <div class="section-eyebrow center">How Ordering Works</div>
+      <h2 class="section-title">Catch the <em>weekly drop.</em></h2>
+      <p>We offer weekly pickup &amp; delivery ordering through Hotplate. Here's how to get yours.</p>
+    </div>
+    <div class="hiw-steps">
+      <div class="hiw-step fade-up">
+        <div class="hiw-step-num">1</div>
+        <h3>Join the list</h3>
+        <p>Head to our Hotplate page and click "Never Miss a Sale" or "Join" — enter your info to get notified the moment ordering opens each week.</p>
+      </div>
+      <div class="hiw-step fade-up">
+        <div class="hiw-step-num">2</div>
+        <h3>Be there when it drops</h3>
+        <p>A drop is a pre-order sale available for a short time with limited inventory. When orders open, get what you can before someone else does!</p>
+      </div>
+      <div class="hiw-step fade-up">
+        <div class="hiw-step-num">3</div>
+        <h3>Pick up or get it delivered</h3>
+        <p>Choose pickup or delivery at checkout, pay securely, and we'll have your fresh-baked order ready to go.</p>
+      </div>
+    </div>
+    <div class="hiw-note fade-up">
+      <strong>Please note:</strong> Drop dates may vary due to markets and private catering events. Joining the notification list is the best way to know exactly when each week's ordering opens.
+    </div>
+    <div class="hiw-cta fade-up">
+      <a href="https://www.hotplate.com/lesdishes" target="_blank" rel="noopener" class="btn btn-primary">
+        Join the Weekly Drop <span class="btn-arrow">→</span>
+      </a>
+      <p class="hiw-immediate">
+        Need something immediately? Reach out through our <a href="#catering">catering inquiry form</a> or email us at <a href="mailto:Info@lesdishes.com">Info@lesdishes.com</a>.
+      </p>
     </div>
   </div>
 </section>
@@ -1193,6 +1322,66 @@ footer {
   </div>
 </section>
 
+<!-- ============ CUSTOM ORDER INQUIRY ============ -->
+<section id="custom-inquiry" style="background: var(--cream-soft); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);">
+  <div class="container" style="max-width: 720px;">
+    <div class="fade-up" style="text-align: center; margin-bottom: 48px;">
+      <div class="section-eyebrow center">Custom Order Inquiry</div>
+      <h2 class="section-title">Have something <em>special in mind?</em></h2>
+      <p style="font-size: 17px; color: var(--brown-mid); line-height: 1.7; max-width: 560px; margin: 0 auto;">Birthday cake, holiday pies, custom shooters, or just an idea you're noodling on — tell us what you're thinking and we'll be in touch within 48 hours.</p>
+    </div>
+
+    <form class="catering-form fade-up" action="https://formspree.io/f/YOUR_FORM_ID_HERE" method="POST" id="custom-form" style="margin: 0 auto;">
+      <input type="hidden" name="_subject" value="New Custom Order Inquiry — LesDishes">
+      <input type="hidden" name="inquiry_type" value="Custom Order">
+
+      <div class="form-row two-col">
+        <div>
+          <label for="custom_name">Your Name</label>
+          <input type="text" id="custom_name" name="name" required>
+        </div>
+        <div>
+          <label for="custom_email">Email</label>
+          <input type="email" id="custom_email" name="email" required>
+        </div>
+      </div>
+
+      <div class="form-row two-col">
+        <div>
+          <label for="custom_phone">Phone</label>
+          <input type="tel" id="custom_phone" name="phone">
+        </div>
+        <div>
+          <label for="custom_needed_by">Needed By</label>
+          <input type="date" id="custom_needed_by" name="needed_by" required>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <label for="custom_what">What are you looking for?</label>
+        <select id="custom_what" name="what" required>
+          <option value="">Select one</option>
+          <option>Custom Cake</option>
+          <option>Seasonal Pie(s)</option>
+          <option>Cinnamon Rolls</option>
+          <option>Dessert Shooters</option>
+          <option>Sweet Bread / Loaf</option>
+          <option>Mixed / Multiple Items</option>
+          <option>Other (describe below)</option>
+        </select>
+      </div>
+
+      <div class="form-row">
+        <label for="custom_details">Tell us the details</label>
+        <textarea id="custom_details" name="details" placeholder="Flavors, quantities, dietary needs, occasion, theme, inspiration photos welcome via email after submitting..." required></textarea>
+      </div>
+
+      <button type="submit" class="form-submit">Send Inquiry →</button>
+      <p class="form-note">We'll respond within 48 hours · <a href="mailto:Info@lesdishes.com" style="color: var(--brown); text-decoration: underline;">Info@lesdishes.com</a></p>
+    </form>
+  </div>
+</section>
+
 <!-- ============ SOCIALS ============ -->
 <section id="socials">
   <div class="container fade-up">
@@ -1200,14 +1389,14 @@ footer {
     <h2 class="socials-title">Come watch us <em>make a mess</em><br>(and clean it up beautifully).</h2>
     <p class="socials-sub">Behind-the-scenes bakes, weekly drops, and the occasional flour-covered selfie. Follow along.</p>
     <div class="socials-row">
-      <a href="#" class="social-icon" aria-label="Instagram" target="_blank" rel="noopener">
+      <a href="https://www.instagram.com/lesdishes" class="social-icon" aria-label="Instagram" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
           <rect x="3" y="3" width="18" height="18" rx="5"/>
           <circle cx="12" cy="12" r="4"/>
           <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor"/>
         </svg>
       </a>
-      <a href="#" class="social-icon" aria-label="Facebook" target="_blank" rel="noopener">
+      <a href="https://www.facebook.com/leslie.bradberry" class="social-icon" aria-label="Facebook" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="currentColor">
           <path d="M13.5 22v-9h3l.5-3.5h-3.5V7.2c0-1 .3-1.7 1.8-1.7H17V2.2C16.6 2.1 15.4 2 14 2c-2.9 0-4.9 1.8-4.9 5v2.5H6V13h3.1v9h4.4z"/>
         </svg>
@@ -1229,6 +1418,7 @@ footer {
       <a href="#about">About</a>
       <a href="#bakery">Bakery</a>
       <a href="#sweet-treats">Custom Orders</a>
+      <a href="#how-it-works">How to Order</a>
       <a href="#market">Markets</a>
       <a href="#catering">Catering</a>
     </div>
@@ -1236,7 +1426,7 @@ footer {
       <h4>Get In Touch</h4>
       <a href="https://www.hotplate.com/lesdishes" target="_blank" rel="noopener">Order on Hotplate</a>
       <a href="#catering">Catering Inquiries</a>
-      <a href="mailto:hello@lesdishes.com">hello@lesdishes.com</a>
+      <a href="mailto:Info@lesdishes.com">Info@lesdishes.com</a>
     </div>
   </div>
   <div class="footer-bottom">
